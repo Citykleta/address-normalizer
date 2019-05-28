@@ -1,5 +1,7 @@
 # address-normalizer
 
+[![CircleCI](https://circleci.com/gh/Citykleta/address-normalizer.svg?style=svg)](https://circleci.com/gh/Citykleta/address-normalizer)
+
 Javascript address normalizer for cuban address schema (tested on Havana data set).
 Creates structured addresses from raw address strings.
 
