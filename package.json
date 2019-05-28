@@ -1,0 +1,48 @@
+{
+  "name": "@citykleta/address-normalizer",
+  "version": "0.1.0",
+  "description": "address normalizer for cuban addresses",
+  "main": "./dist/bundle/index",
+  "types": "./dist/declarations/index.d.ts",
+  "module": "./dist/bundle/module.js",
+  "scripts": {
+    "test:bundle": "rollup -c ./rollup/test.js",
+    "test": "node ./test/dist/debug.js",
+    "test:browser": "npm test | tape-run",
+    "test:ci": "npm test | tap-set-exit",
+    "build:clean": "rm -rf ./dist ./src/*.js ./test/*.js ./test/**/*.js ./src/tsconfig.tsbuildinfo && mkdir -p ./dist/bundle",
+    "build:compile": "tsc -b ./src ./test",
+    "build:bundle": "rollup -c ./rollup/build.js",
+    "build": "npm run build:clean && npm run build:compile && npm run build:bundle",
+    "dev": "npm run build:compile -- -w & npm run build:bundle -- -w & npm run test:bundle -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Citykleta/address-normalizer.git"
+  },
+  "files": [
+    "dist/bundle",
+    "dist/declarations"
+  ],
+  "keywords": [
+    "gis",
+    "address",
+    "cuba",
+    "parser",
+    "geocode"
+  ],
+  "author": "Laurent RENARD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Citykleta/address-normalizer/issues"
+  },
+  "homepage": "https://github.com/Citykleta/address-normalizer#readme",
+  "devDependencies": {
+    "rollup": "^1.12.4",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "tap-set-exit": "^1.1.1",
+    "typescript": "^3.4.5",
+    "zora": "^3.0.1"
+  }
+}

@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+.idea
+
+dist
+src/*.js
+src/tsconfig.tsbuildinfo
+test/*.js
+test/**/*.js
+.DS_Store
