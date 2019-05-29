@@ -1,5 +1,5 @@
 {
-  "name": "@citykleta/address-normalizer",
+  "name": "@lorenzofox3/habana-address-normalizer",
   "version": "0.1.0",
   "description": "address normalizer for cuban addresses",
   "main": "./dist/bundle/index",
