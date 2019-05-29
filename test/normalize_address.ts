@@ -1,4 +1,4 @@
-import {create_address} from '../src/index';
+import {create_address, parse, tokenize} from '../src/index';
 
 export default function (test) {
     test('parse a single identifier as a street name', t => {
@@ -199,4 +199,29 @@ export default function (test) {
         t.eq(create_address('calle 10 no. 123'), expected);
         t.eq(create_address('calle 10 # 123'), expected);
     });
+
+    test('parse corner as "S1 y s2"', t => {
+        const expected = {
+            corner: [
+                {name: '1ra'},
+                {name: 'calle 10'}
+            ]
+        };
+        const input = 'calle 10 y 1ra';
+        t.eq(create_address(input), expected);
+    });
+
+    test('parse corner as as "S1 y s2" within municipality', t => {
+        const expected = {
+            corner: [
+                {name: '1ra'},
+                {name: 'calle 10'}
+            ],
+            municipality: 'playa'
+        };
+        const input = 'calle 10 y 1ra, playa';
+        t.eq(create_address(input), expected);
+    });
+
+
 }

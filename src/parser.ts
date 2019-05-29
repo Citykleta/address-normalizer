@@ -95,6 +95,11 @@ const parse_esq = (token_stream: Stream<Token>): CornerNode => {
     return create_corner_node(first);
 };
 
+const parse_y = (token_stream: Stream<Token>): CornerNode => {
+    token_stream.expect('y');
+    return create_corner_node(parse_identifier(token_stream));
+};
+
 const parse_group_members = (token_stream: Stream<Token>, members = []): GroupNode => {
     const {value: nextValue, done} = token_stream.seeNext();
 
@@ -131,6 +136,9 @@ const parse_group_members = (token_stream: Stream<Token>, members = []): GroupNo
                     break;
                 case 'esq':
                     members.push(parse_esq(token_stream));
+                    break;
+                case 'y':
+                    members.push(parse_y(token_stream));
                     break;
             }
             break;
