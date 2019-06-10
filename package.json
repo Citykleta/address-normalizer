@@ -38,11 +38,11 @@
   },
   "homepage": "https://github.com/Citykleta/address-normalizer#readme",
   "devDependencies": {
-    "rollup": "^1.12.4",
+    "rollup": "^1.14.6",
     "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
     "tap-set-exit": "^1.1.1",
-    "typescript": "^3.4.5",
+    "typescript": "^3.5.1",
     "zora": "^3.0.1"
   }
 }
