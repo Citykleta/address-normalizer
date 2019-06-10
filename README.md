@@ -9,7 +9,7 @@ Creates structured addresses from raw address strings.
 
 ``npm run install --save``
 
-or can be loaded from the [unpkg cdn]()
+or can be loaded from the [unpkg cdn](https://unpkg.com/@citykleta/habana-address-normalizer@0.1.1/dist/bundle/citykleta_address_normalizer.js)
 
 ## Usage
 
